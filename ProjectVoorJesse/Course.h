@@ -6,15 +6,19 @@
 class Course
 {
 public:
-	Course();
+	Course(std::string aName);
 	~Course();
+
+	void AddSudent(Student* aStudent);
+	std::vector<Student*> GetStudents();
+	void Init();
 protected:
 
 private:
-
 	std::string name;
 	std::string DOE;
+
 	int amountOfStudents;
-	std::vector<Student*> student;
+	std::vector<Student*> students;
 };
 

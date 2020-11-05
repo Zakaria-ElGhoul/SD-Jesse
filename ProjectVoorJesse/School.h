@@ -6,7 +6,6 @@
 class School
 {
 public:
-
     School();
     ~School();
 
@@ -14,7 +13,7 @@ public:
     void RemoveCourse(Course* aCourse);
     int GetAmountOfCourse();
     std::vector<Course*> GetCourse();
-
+    void Init();
 private:
     std::vector<Course*> courses;
     

@@ -13,11 +13,6 @@ void School::AddCourse(Course* aCourse)
 	courses.push_back(aCourse);
 }
 
-void School::RemoveCourse(Course* aCourse)
-{
-	courses.pop_back();
-}
-
 int School::GetAmountOfCourse()
 {
 	return courses.size();
@@ -26,4 +21,12 @@ int School::GetAmountOfCourse()
 std::vector<Course*> School::GetCourse()
 {
 	return courses;
+}
+
+void School::Init()
+{
+	Course course1("Game Development");
+	Course course2("Maths");
+	AddCourse(&course1);
+	AddCourse(&course2);
 }
