@@ -1,22 +1,28 @@
 #pragma once
 #include <Vector>
-#include <string>
 #include "Course.h"
 
 class School
 {
 public:
-    School();
+    School(std::string aName);
     ~School();
 
     void AddCourse(Course* aCourse);
-    void RemoveCourse(Course* aCourse);
+
     int GetAmountOfCourse();
-    std::vector<Course*> GetCourse();
-    void Init();
+
+    std::vector<Course*> GetCourses();
+
+    std::string GetName();
+    void SetName(std:: string aName);
+
 private:
     std::vector<Course*> courses;
-    
+    void Init();
+
+    std::string name;
 
 protected:
+
 };

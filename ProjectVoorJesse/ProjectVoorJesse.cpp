@@ -3,8 +3,8 @@
 
 int main()
 {
-	std::cout << "Hello World" << std::endl;
-	std::cout << "Hello";
-	School myschool;
+	School myschool("Mediacollege");
+	std::cout << myschool.GetName();
+	std::cout << myschool.GetAmountOfCourse();
 	return 0;
 }

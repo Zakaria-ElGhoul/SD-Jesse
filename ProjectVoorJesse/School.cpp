@@ -1,7 +1,8 @@
 #include "School.h"
 
-School::School()
+School::School(std:: string aName)
 {
+	name = aName;
 }
 
 School::~School()
@@ -18,15 +19,24 @@ int School::GetAmountOfCourse()
 	return courses.size();
 }
 
-std::vector<Course*> School::GetCourse()
+std::vector<Course*> School::GetCourses()
 {
 	return courses;
 }
 
+std::string School::GetName()
+{
+	return name;
+}
+
+void School::SetName(std::string aName)
+{
+	name = aName;
+}
+
 void School::Init()
 {
-	Course course1("Game Development");
-	Course course2("Maths");
-	AddCourse(&course1);
-	AddCourse(&course2);
+	courses.push_back(new Course("Media Development"));
+	courses.push_back(new Course("Game Development"));
+	courses.push_back(new Course("Wiskunde"));
 }
