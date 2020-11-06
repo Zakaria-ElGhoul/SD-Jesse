@@ -6,19 +6,28 @@
 class Course
 {
 public:
-	Course(std::string aName);
+
+	std::vector < Student* > students;
+	std::vector<Student*>* GetStudents();
+
+	Course(std::string name);
 	~Course();
 
-	void AddSudent(Student* aStudent);
-	std::vector<Student*> GetStudents();
-	void Init();
-protected:
+	void AddStudent(Student* student);
+	void RemoveStudent(Student* student);
+
+	std::string GetName();
+	int GetAge();
+	int GetStudentCounter();
+
+	void SetName(std::string name);
+	void SetAge(int age);
 
 private:
 	std::string name;
-	std::string DOE;
+	int age;
+	int studentCount;
 
-	int amountOfStudents;
-	std::vector<Student*> students;
+protected:
 };
 

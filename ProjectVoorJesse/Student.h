@@ -1,51 +1,57 @@
 #pragma once
-
+#include "Date.h"
 #include <string>
 
 class Student
 {
 public:
 
-	Student(std::string aName, std::string aLastName, std::string aBirthDate, std::string anAdress, std::string aPostalCode, std::string aPhoneNumber, int aYear, std::string aRegistrationDate, std::string aFirstContactName, std::string aFirstContactLastName, std::string  aFirstContactNumber);
+	Student(std::string aName, std::string aLastName, Date aBirthDate, std::string anAdress, std::string aPostalCode, int aPhoneNumber, int aYear, Date aRegistrationDate, std::string aFirstContactName, std::string aFirstContactLastName, int aFirstContactNumber);
 	~Student();
+#pragma region Getters en setters
 
-	void SetName(std::string aName);
-	void SetLastName(std::string aLastName);
-	void SetDateOfBirth(std::string aBirthDate);
-	void SetAdress(std::string anAdress);
-	void SetPostalCode(std::string aPostalCode);
-	void SetPhoneNumber(std::string aPhoneNumber);
-	void SetYear(int aYear);
-	void SetRegistrationDate(std::string aRegistrationDate);
-	void SetFirstContactName(std::string aFirstContactName);
-	void SetFirstContactLastName(std::string aFirstContactLastName);
-	void SetFirstContactNumber(std::string aFirstContactNumber);
 
 	std::string GetName();
 	std::string GetLastName();
-	std::string GetDateOfBirth();
+	Date GetDateOfBirth();
 	std::string GetAdress();
 	std::string GetPostalCode();
-	std::string GetPhoneNumber();
+	int GetPhoneNumber();
 	int GetYear();
-	std::string GetRegistrationDate();
+	Date GetRegistrationDate();
 	std::string GetFirstContactName();
 	std::string GetFirstContactLastName();
-	std::string GetFirstContactNumber();
+	int GetFirstContactNumber();
+
+	void SetName(std::string aName);
+	void SetLastName(std::string aLastName);
+	void SetDateOfBirth(Date aBirthDate);
+	void SetAdress(std::string anAdress);
+	void SetPostalCode(std::string aPostalCode);
+	void SetPhoneNumber(int aPhoneNumber);
+	void SetYear(int aYear);
+	void SetRegistrationDate(Date aRegistrationDate);
+	void SetFirstContactName(std::string aFirstContactName);
+	void SetFirstContactLastName(std::string aFirstContactLastName);
+	void SetFirstContactNumber(int aFirstContactNumber);
+#pragma endregion
+
+	void NextYear();
+	bool FinishedSchool();
 
 private:
 
 	std::string name;
 	std::string lastName;
-	std::string birthDate;
+	Date birthDate;
 	std::string adress;
 	std::string postalCode;
-	std::string phoneNumber;
+	int phoneNumber;
 	int year;
-	std::string registrationDate;
+	Date registrationDate;
 	std::string firstContactName;
 	std::string firstContactLastName;
-	std::string firstContactnumber;
+	int firstContactnumber;
 
 protected:
 };

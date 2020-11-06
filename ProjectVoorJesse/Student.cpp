@@ -1,7 +1,9 @@
+#include <iostream>
+
 #include "Student.h"
 #include "Course.h"
 
-Student::Student(std::string aName, std::string aLastName, std::string aBirthDate, std::string anAdress, std::string aPostalCode, std::string aPhoneNumber, int aYear, std::string aRegistrationDate, std::string aFirstContactName, std::string aFirstContactLastName, std::string  aFirstContactNumber)
+Student::Student(std::string aName, std::string aLastName, Date aBirthDate, std::string anAdress, std::string aPostalCode, int aPhoneNumber, int aYear, Date aRegistrationDate, std::string aFirstContactName, std::string aFirstContactLastName, int aFirstContactNumber)
 {
 	name = aName;
 	lastName = aLastName;
@@ -9,16 +11,31 @@ Student::Student(std::string aName, std::string aLastName, std::string aBirthDat
 	adress = anAdress;
 	postalCode = aPostalCode;
 	phoneNumber = aPhoneNumber;
-	year = aYear;
+	year = 0;
 	registrationDate = aRegistrationDate;
 	firstContactName = aFirstContactName;
 	firstContactLastName = aFirstContactLastName;
 	firstContactnumber = aFirstContactNumber;
+
+	std::cout << "New student was created" << std:: endl;
 }
 
 Student::~Student()
 {
+	std::cout << "Student deleted student Name: " << name << std::endl;
 }
+
+void Student::NextYear() 
+{
+	year += 1;
+}
+
+bool Student::FinishedSchool() 
+{
+	return (year > 4);
+}
+#pragma region Getters en Setters
+
 
 void Student::SetName(std::string aName)
 {
@@ -30,7 +47,7 @@ void Student::SetLastName(std::string aLastName)
 	lastName = aLastName;
 }
 
-void Student::SetDateOfBirth(std::string aBirthDate)
+void Student::SetDateOfBirth(Date aBirthDate)
 {
 	birthDate = aBirthDate;
 }
@@ -45,7 +62,7 @@ void Student::SetPostalCode(std::string aPostalCode)
 	postalCode = aPostalCode;
 }
 
-void Student::SetPhoneNumber(std::string aPhoneNumber)
+void Student::SetPhoneNumber(int aPhoneNumber)
 {
 	phoneNumber = aPhoneNumber;
 }
@@ -55,7 +72,7 @@ void Student::SetYear(int aYear)
 	year = aYear;
 }
 
-void Student::SetRegistrationDate(std::string aRegistrationDate)
+void Student::SetRegistrationDate(Date aRegistrationDate)
 {
 	registrationDate = aRegistrationDate;
 }
@@ -70,7 +87,7 @@ void Student::SetFirstContactLastName(std::string aFirstContactLastName)
 	firstContactLastName = aFirstContactLastName;
 }
 
-void Student::SetFirstContactNumber(std::string aFirstContactNumber)
+void Student::SetFirstContactNumber(int aFirstContactNumber)
 {
 	firstContactnumber = aFirstContactNumber;
 }
@@ -86,7 +103,7 @@ std::string Student::GetLastName()
 	return lastName;
 }
 
-std::string Student::GetDateOfBirth()
+ Date Student::GetDateOfBirth()
 {
 	return birthDate;
 }
@@ -101,7 +118,7 @@ std::string Student::GetPostalCode()
 	return postalCode;
 }
 
-std::string Student::GetPhoneNumber()
+int Student::GetPhoneNumber()
 {
 	return phoneNumber;
 }
@@ -111,7 +128,7 @@ int Student::GetYear()
 	return year;
 }
 
-std::string Student::GetRegistrationDate()
+Date Student::GetRegistrationDate()
 {
 	return registrationDate;
 }
@@ -126,7 +143,9 @@ std::string Student::GetFirstContactLastName()
 	return firstContactLastName;
 }
 
-std::string Student::GetFirstContactNumber()
+int Student::GetFirstContactNumber()
 {
 	return firstContactnumber;
 }
+
+#pragma endregion

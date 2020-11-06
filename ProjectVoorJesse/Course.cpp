@@ -1,32 +1,65 @@
-#include "Course.h"
+#include <iostream>;
+#include <vector>;
+#include "Course.h";
 
-Course::Course(std::string aName)
+Course::Course(std::string name)
 {
-	Init();
+	name = name;
+	std::cout << "Successfully made the course: " + name << std::endl;
 }
-
 Course::~Course()
 {
+	std::cout << "The name of the course that was deleted: " + name;
 }
 
-void Course::AddSudent(Student* aStudent)
+
+
+void Course::AddStudent(Student* student)
 {
-	students.push_back(aStudent);
+	students.push_back(student);
 }
 
-std::vector<Student*> Course::GetStudents()
+void Course::RemoveStudent(Student* student)
 {
-	return students;
+	for (int i = 0; i < students.size(); i++) {
+		if (students[i] == student) {
+			students.erase(students.begin() + i);
+			i -= 1;
+		}
+	}
 }
 
-void Course::Init()
+#pragma region Getters en setters
+
+
+std::string Course::GetName() 
 {
-	Student student1("Zakaria", "El Ghoul", "19-11-2002", "TussenMeer 18", "1068GA", "0612345678", 1, "19-07-2018", "Famke", "Louise", "0647382912");
-	Student student2("Zakaria", "El Ghoul", "19-11-2002", "TussenMeer 18", "1068GA", "0612345678", 1, "19-07-2018", "Famke", "Louise", "0647382912");
-	Student student3("Zakaria", "El Ghoul", "19-11-2002", "TussenMeer 18", "1068GA", "0612345678", 1, "19-07-2018", "Famke", "Louise", "0647382912");
-	Student student4("Zakaria", "El Ghoul", "19-11-2002", "TussenMeer 18", "1068GA", "0612345678", 1, "19-07-2018", "Famke", "Louise", "0647382912");
-	AddSudent(&student1);
-	AddSudent(&student2);
-	AddSudent(&student3);
-	AddSudent(&student4);
+	return name; 
 }
+
+int Course::GetAge() 
+{ 
+	return age; 
+}
+
+int Course::GetStudentCounter() 
+{
+	return studentCount; 
+}
+
+std::vector<Student*>* Course::GetStudents() 
+{
+	return &students; 
+}
+
+void Course::SetName(std::string name) 
+{
+	this->name = name; 
+}
+
+void Course::SetAge(int age)
+{
+	age = age; 
+}
+
+#pragma endregion
