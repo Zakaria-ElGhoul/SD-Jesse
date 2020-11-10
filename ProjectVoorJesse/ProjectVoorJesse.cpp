@@ -12,7 +12,7 @@ void clearConsole() {
 
 int main()
 {
-	School* school = new School("MediaCollege Amsterdam", "2376 GT", 112);
+	School* school = new School("MediaCollege", "2376 GT", 112);
 
 	Course* course1 = new Course("Game development");
 	Course* course2 = new Course("Media development");
