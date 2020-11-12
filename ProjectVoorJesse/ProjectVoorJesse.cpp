@@ -66,7 +66,8 @@ int main()
 
 	std::string next;
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++) 
+	{
 		school->NextYear();
 		school->Init();
 		std::cout << std::endl << std::endl << "Type to go to the next year!" << std::endl;
